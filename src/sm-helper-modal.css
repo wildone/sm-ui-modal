@@ -1,0 +1,47 @@
+:host {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index);
+}
+
+:host([visible]) {
+  display: flex;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--light-black);
+}
+
+.modal {
+  display: inline-block;
+  position: relative;
+  background: white;
+  border-radius: var(--border-radius);
+  width: var(--modal-width, auto);
+  height: var(--modal-height, auto);
+  max-width: 95%;
+  min-height: 300px;
+  min-width: 350px;
+  padding: 2.5em;
+  box-shadow: 0 1px 1px var(--light-black);
+  z-index: 1;
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  color: var(--gray);
+  height: auto;
+}

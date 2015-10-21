@@ -1,0 +1,16 @@
+<dom-module id="sm-helper-modal">
+  <template>
+    <style include="sm-css"></style>
+    <link rel="stylesheet" href="./sm-helper-modal.css" />
+
+    <div class="overlay" id="overlay" on-tap="close"></div>
+
+    <div class="modal" id="modal">
+      <sm-helper-button class="modal__close" id="close" on-tap="close" icon="simpla:cross"></sm-helper-button>
+      <content></content>
+    </div>
+
+
+  </template>
+  <script src="./sm-helper-modal.js"></script>
+</dom-module>

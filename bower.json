@@ -1,0 +1,37 @@
+{
+  "name": "sm-helper-modal",
+  "description": "UI modal component for use throughout Simpla",
+  "version": "0.0.0",
+  "authors": [
+    "Simpla <admin@simpla.io>"
+  ],
+  "license": "MIT",
+  "main": "sm-helper-modal.html",
+  "keywords": [
+    "simpla",
+    "web component",
+    "polymer",
+    "modal"
+  ],
+  "ignore": [
+    "*",
+    "!src/**/*",
+    "!sm-helper-modal.html",
+    "!LICENSE"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.7.14",
+    "polymer": "^1.1.4",
+    "simpla": "git@github.com:simplaio/simpla.git",
+    "sm-helper-button": "git@github.com:simplaio/sm-helper-button.git"
+  },
+  "devDependencies": {
+    "web-component-tester": "^3.3.22",
+    "test-fixture": "PolymerElements/test-fixture#~1.0.0"
+  },
+  "componentImports": [
+    "polymer/polymer.html",
+    "simpla/simpla.html",
+    "sm-helper-button/sm-helper-button.html"
+  ]
+}

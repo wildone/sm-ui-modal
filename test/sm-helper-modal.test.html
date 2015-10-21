@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>sm-helper-modal</title>
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+    <link rel="import" href="../../test-fixture/test-fixture.html">
+
+    <!-- Import the element to test -->
+    <link rel="import" href="../sm-helper-modal.html">
+    <script src="./sm-helper-modal.fixtures.js"></script>
+  </head>
+  <body>
+    <test-fixture id="default">
+      <template>
+        <sm-helper-modal></sm-helper-modal>
+      </template>
+    </test-fixture>
+    <script>
+      describe('<sm-helper-modal>', function() {
+
+        var component,
+            componentFixtures;
+
+        componentFixtures = window.fixtures;
+
+        beforeEach(function() {
+          component = fixture('default');
+        });
+
+        it('is okay', function() {
+          expect(component).to.be.ok;
+        });
+
+        it('sets active to false on close button click', function() {
+          component.$.close.click();
+          expect(component.active).to.be.false;
+        });
+
+        it('sets active to false on click outside modal', function() {
+          component.$.overlay.click();
+          expect(component.active).to.be.false;
+        });
+
+        it('sets active property to true on open()', function() {
+          component.open();
+          expect(component.active).to.be.true;
+        });
+
+        it('sets active property to false on close()', function() {
+          component.close();
+          expect(component.active).to.be.false;
+        });
+
+        it('calls animateOpen() when active', function() {
+          component.active = false;
+          sinon.stub(component, '_openModal');
+
+          component.active = true;
+          expect(component._openModal.called).to.be.true;
+        });
+
+        it('calls animateClose() when inactive', function() {
+          component.active = true;
+          sinon.stub(component, '_closeModal');
+
+          component.active = false;
+          expect(component._closeModal.called).to.be.true;
+        });
+
+        it('completes _openModal() without errors', function() {
+          expect(component._openModal.bind(component)).to.not.throw(Error);
+        });
+
+        it('completes _closeModal() wihout errors', function() {
+          expect(component._closeModal.bind(component)).to.not.throw(Error);
+        });
+
+        it('_openModal() sets visible to true', function() {
+          component._openModal();
+          expect(component.getAttribute('visible')).to.not.be.null;
+        });
+
+      });
+    </script>
+  </body>
+</html>
