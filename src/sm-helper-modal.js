@@ -20,6 +20,10 @@ class SmHelperModal {
     this.active = false;
   }
 
+  getModal() {
+    return this.$.modal;
+  }
+
 }
 
 Polymer(SmHelperModal);
