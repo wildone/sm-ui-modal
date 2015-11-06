@@ -24,6 +24,7 @@
 }
 
 .modal {
+  @apply(--typography);
   display: inline-block;
   position: relative;
   background: white;
@@ -33,15 +34,40 @@
   max-width: 95%;
   min-height: 300px;
   min-width: 350px;
-  padding: 2.5em;
+  overflow: hidden;
   box-shadow: 0 1px 1px var(--light-black);
   z-index: 1;
 }
 
+.modal__banner {
+  padding: 1.5rem 2.5rem;
+  background: var(--blue);
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.modal__content {
+  padding: 2.5rem;
+}
+
 .modal__close {
   position: absolute;
-  top: 15px;
-  right: 18px;
-  color: var(--gray);
+  top: 10px;
+  right: 13px;
   height: auto;
+  color: var(--light-black);
+  --icon-size: 14px;
+}
+
+.modal__close:hover {
+  color: var(--med-black);
+}
+
+.modal__close[banner] {
+  color: var(--med-white);
+}
+
+.modal__close[banner]:hover {
+  color: var(--bright-white);
 }

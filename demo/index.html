@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <title>sm-helper-modal</title>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
     <link rel="import" href="../sm-helper-modal.html" />
   </head>
   <body>
-    <sm-helper-modal>
-      <h1 style="text-align: center;">Modal!</h1>
-    </sm-helper-modal>
+    <sm-helper-modal>Some great content in my great modal</sm-helper-modal>
+    <sm-helper-modal title="My Modal">Some great content in my great modal</sm-helper-modal>
   </body>
 </html>

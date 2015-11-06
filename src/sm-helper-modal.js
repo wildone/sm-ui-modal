@@ -3,6 +3,15 @@ import animation from './helpers/animation';
 class SmHelperModal {
   beforeRegister() {
     this.is = 'sm-helper-modal';
+
+    this.properties = {
+      title: String,
+      hasBanner: {
+        type: Boolean,
+        computed: '_computeHasBanner(title)',
+        value: false
+      }
+    }
   }
 
   get behaviors() {
@@ -10,6 +19,10 @@ class SmHelperModal {
       animation,
       simpla.behaviors.active()
     ];
+  }
+
+  _computeHasBanner(title) {
+    return !!title;
   }
 
   open() {

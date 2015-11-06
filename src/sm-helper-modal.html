@@ -6,8 +6,14 @@
     <div class="overlay" id="overlay" on-tap="close"></div>
 
     <div class="modal" id="modal">
-      <sm-helper-button class="modal__close" id="close" on-tap="close" icon="simpla:cross"></sm-helper-button>
-      <content></content>
+      <h1 class="modal__banner" hidden=[[!hasBanner]]>[[title]]</h1>
+
+      <sm-helper-button class="modal__close" id="close" on-tap="close" icon="simpla:cross" banner$=[[hasBanner]]></sm-helper-button>
+
+      <div class="modal__content">
+        <content></content>
+      </div>
+
     </div>
 
 
