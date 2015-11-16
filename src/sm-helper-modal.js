@@ -1,4 +1,4 @@
-import animation from './helpers/animation';
+import animation from './behaviors/animation';
 
 class SmHelperModal {
   beforeRegister() {
