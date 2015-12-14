@@ -1,8 +1,8 @@
 {
-  "name": "sm-helper-modal",
-  "version": "0.1.0",
+  "name": "sm-ui-modal",
+  "version": "0.0.0",
   "description": "UI modal component for use throughout Simpla",
-  "main": "sm-helper-modal.html",
+  "main": "sm-ui-modal.html",
   "scripts": {
     "test": "gulp test:local"
   },
@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/simplaio/sm-helper-modal.git"
+    "url" : "https://github.com/simplaio/sm-ui-modal.git"
   },
   "bugs": {
-    "url" : "https://github.com/simplaio/sm-helper-modal/issues"
+    "url" : "https://github.com/simplaio/sm-ui-modal/issues"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",

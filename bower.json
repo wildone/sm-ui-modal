@@ -1,12 +1,12 @@
 {
-  "name": "sm-helper-modal",
+  "name": "sm-ui-modal",
   "description": "UI modal component for use throughout Simpla",
   "version": "0.0.0",
   "authors": [
     "Simpla <admin@simpla.io>"
   ],
   "license": "MIT",
-  "main": "sm-helper-modal.html",
+  "main": "sm-ui-modal.html",
   "keywords": [
     "simpla",
     "web component",
@@ -16,7 +16,7 @@
   "ignore": [
     "*",
     "!src/**/*",
-    "!sm-helper-modal.html",
+    "!sm-ui-modal.html",
     "!LICENSE"
   ],
   "dependencies": {

@@ -1,6 +1,6 @@
 import animation from './behaviors/animation';
 
-class SmHelperModal {
+class SmUiModal {
   beforeRegister() {
     this.is = 'sm-helper-modal';
 
@@ -39,4 +39,4 @@ class SmHelperModal {
 
 }
 
-Polymer(SmHelperModal);
+Polymer(SmUiModal);
