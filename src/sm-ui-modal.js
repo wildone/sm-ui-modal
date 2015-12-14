@@ -2,7 +2,7 @@ import animation from './behaviors/animation';
 
 class SmUiModal {
   beforeRegister() {
-    this.is = 'sm-helper-modal';
+    this.is = 'sm-ui-modal';
 
     this.properties = {
       title: String,
