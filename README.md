@@ -1,4 +1,4 @@
-# Helper Modal
+# UI Modal
 
 UI modal component for use throughout Simpla
 
