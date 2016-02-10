@@ -71,3 +71,13 @@
 .modal__close[banner]:hover {
   color: var(--bright-white);
 }
+
+:host ::content .modal-action {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: var(--blue);
+  color: white;
+  padding: 16px 24px;
+  border-radius: var(--border-radius);
+}
