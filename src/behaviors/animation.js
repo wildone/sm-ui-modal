@@ -22,19 +22,19 @@ export default {
       {
         target: modal,
         frames: [
-          { transform: 'scale(0.5, 0.8)', opacity: 0 },
+          { transform: 'scale(0.75, 0.95)', opacity: 0 },
           { transform: 'scale(1, 1)', opacity: 1 }
         ],
         opts: {
           open: {
-            easing: easings.easeOutBack,
+            easing: easings.easeOutCubic,
             fill: 'both',
-            duration: 200,
+            duration: 120,
           },
           close: {
-            easing: easings.easeInBack,
+            easing: easings.easeOutCubic,
             fill: 'both',
-            duration: 150
+            duration: 100
           }
         }
       },
