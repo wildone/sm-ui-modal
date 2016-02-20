@@ -8,7 +8,7 @@
     <div class="modal" id="modal">
       <h1 class="modal__banner" hidden=[[!hasBanner]]>[[title]]</h1>
 
-      <sm-ui-button class="modal__close" id="close" on-tap="close" icon="simpla:cross" banner$=[[hasBanner]]></sm-ui-button>
+      <button is="sm-ui-button" class="modal__close" id="close" on-tap="close" icon="simpla:cross" banner$=[[hasBanner]]></button>
 
       <div class="modal__content">
         <content></content>
