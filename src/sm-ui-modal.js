@@ -45,10 +45,17 @@ class SmUiModal {
 
   open() {
     this.active = true;
+    this.fire = 'open';
   }
 
   close() {
     this.active = false;
+    this.fire = 'close';
+  }
+
+  confirm() {
+    this.active = false;
+    this.fire = 'confirm';
   }
 
   getModal() {
@@ -58,7 +65,7 @@ class SmUiModal {
   _closeOnConfirm() {
     let confirm = Polymer.dom(this).querySelector(`.${CONFIRM_CLASS}`);
     if (confirm) {
-      this.listen(confirm, 'tap', 'close');
+      this.listen(confirm, 'tap', 'confirm');
     }
   }
 
