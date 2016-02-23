@@ -12,10 +12,12 @@
   </head>
   <body>
     <sm-ui-modal>Some great content in my great modal</sm-ui-modal>
+
     <sm-ui-modal title="My Modal">Some great content in my great modal</sm-ui-modal>
-    <sm-ui-modal title="Action Modal">
-      Some great content in my great modal
-      <sm-ui-button class="modal-action">submit</sm-ui-button>
+
+    <sm-ui-modal title="Action Modal" no-exit>
+      You can't exit this modal without clicking the submit button
+      <button is="sm-ui-button" class="modal-confirm">submit</button>
     </sm-ui-modal>
   </body>
 </html>

@@ -3,18 +3,18 @@
     <style include="sm-css"></style>
     <link rel="stylesheet" href="./sm-ui-modal.css" inline />
 
-    <div class="overlay" id="overlay" on-tap="close"></div>
+    <div class="overlay" id="overlay"></div>
 
     <div class="modal" id="modal">
-      <h1 class="modal__banner" hidden=[[!hasBanner]]>[[title]]</h1>
+      <h1 class="modal__banner" hidden$=[[!hasBanner]]>[[title]]</h1>
 
-      <button is="sm-ui-button" class="modal__close" id="close" on-tap="close" icon="simpla:cross" banner$=[[hasBanner]]></button>
+      <button is="sm-ui-button" hidden$="[[noExit]]" class="modal__close" id="close" on-tap="close" icon="simpla:cross" banner$=[[hasBanner]]></button>
 
       <div class="modal__content">
         <content></content>
       </div>
 
-      <content select=".modal-action"></content>
+      <content select=".modal-confirm"></content>
 
     </div>
 

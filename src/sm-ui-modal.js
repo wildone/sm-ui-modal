@@ -1,5 +1,7 @@
 import animation from './behaviors/animation';
 
+const CONFIRM_CLASS = 'modal-confirm';
+
 class SmUiModal {
   beforeRegister() {
     this.is = 'sm-ui-modal';
@@ -10,6 +12,12 @@ class SmUiModal {
        * @type {String}
        */
       title: String,
+
+      /**
+       * Whether the user should be able to exit the modal without clicking confirm
+       * @type {[type]}
+       */
+      noExit: Boolean,
 
       /**
        * Whether the modal has a banner
@@ -45,6 +53,26 @@ class SmUiModal {
 
   getModal() {
     return this.$.modal;
+  }
+
+  _closeOnConfirm() {
+    let confirm = Polymer.dom(this).querySelector(`.${CONFIRM_CLASS}`);
+    if (confirm) {
+      this.listen(confirm, 'tap', 'close');
+    }
+  }
+
+  _closeOnOverlay() {
+    if (this.noExit) {
+      return;
+    }
+
+    this.listen(this.$.overlay, 'tap', 'close');
+  }
+
+  attached() {
+    this._closeOnConfirm();
+    this._closeOnOverlay();
   }
 
 }
