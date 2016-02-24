@@ -35,8 +35,18 @@ class SmUiModal {
   get behaviors() {
     return [
       animation,
-      simpla.behaviors.active()
+      simpla.behaviors.active({
+        observer: '_activeChanged'
+      })
     ];
+  }
+
+  _activeChanged(active) {
+    if (active) {
+      this.fire('opened');
+    } else {
+      this.fire('closed');
+    }
   }
 
   _computeHasBanner(title) {
@@ -45,17 +55,15 @@ class SmUiModal {
 
   open() {
     this.active = true;
-    this.fire = 'open';
   }
 
   close() {
     this.active = false;
-    this.fire = 'close';
   }
 
   confirm() {
     this.active = false;
-    this.fire = 'confirm';
+    this.fire('confirm');
   }
 
   getModal() {
