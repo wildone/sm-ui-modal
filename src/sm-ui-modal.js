@@ -85,9 +85,18 @@ class SmUiModal {
     this.listen(this.$.overlay, 'tap', 'close');
   }
 
+  _closeOnEscape() {
+    document.addEventListener('keyup', (e) => {
+      if (e.keyCode === 27) {
+        this.close();
+      }
+    });
+  }
+
   attached() {
     this._closeOnConfirm();
     this._closeOnOverlay();
+    this._closeOnEscape();
   }
 
 }
