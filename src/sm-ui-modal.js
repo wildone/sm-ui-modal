@@ -41,6 +41,11 @@ class SmUiModal {
     ];
   }
 
+  /**
+   * Observer for the active property, fires events on change
+   * @param  {Boolean} active Current state of the active property
+   * @return {undefined}
+   */
   _activeChanged(active) {
     if (active) {
       this.fire('opened');
@@ -49,27 +54,52 @@ class SmUiModal {
     }
   }
 
+  /**
+   * Compute value of the hasBanner property by coercing title property
+   * @param  {String} title Current value of the title property
+   * @return {Boolean}      Coerced boolean of title
+   */
   _computeHasBanner(title) {
     return !!title;
   }
 
+  /**
+   * Convinience method for setting active to true
+   * @return {undefined}
+   */
   open() {
     this.active = true;
   }
 
+  /**
+   * Convinience method for setting active to false
+   * @return {undefined}
+   */
   close() {
     this.active = false;
   }
 
+  /**
+   * Set active true and fire 'confirmed' event
+   * @return {undefined}
+   */
   confirm() {
     this.active = false;
     this.fire('confirm');
   }
 
+  /**
+   * Public interface to fetch modal element
+   * @return {undefined}
+   */
   getModal() {
     return this.$.modal;
   }
 
+  /**
+   * Close the modal on confirm button tap
+   * @return {undefined}
+   */
   _closeOnConfirm() {
     let confirm = Polymer.dom(this).querySelector(`.${CONFIRM_CLASS}`);
     if (confirm) {
@@ -77,6 +107,10 @@ class SmUiModal {
     }
   }
 
+    /**
+     * Close the modal on overlay tap
+     * @return {undefined}
+     */
   _closeOnOverlay() {
     if (this.noExit) {
       return;
@@ -85,6 +119,10 @@ class SmUiModal {
     this.listen(this.$.overlay, 'tap', 'close');
   }
 
+  /**
+   * Close the modal on escape key press
+   * @return {undefined}
+   */
   _closeOnEscape() {
     document.addEventListener('keyup', (e) => {
       if (e.keyCode === 27) {
@@ -93,6 +131,10 @@ class SmUiModal {
     });
   }
 
+  /**
+   * Initialise close listeners on element attach
+   * @return {undefined}
+   */
   attached() {
     this._closeOnConfirm();
     this._closeOnOverlay();

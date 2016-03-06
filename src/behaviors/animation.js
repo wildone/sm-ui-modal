@@ -5,6 +5,11 @@ export default {
     '_toggleModal(active)'
   ],
 
+  /**
+   * Animation observer for the active property
+   * @param  {Boolean} active Current state of the active property
+   * @return {undefined}
+   */
   _toggleModal(active) {
     if (active) {
       this._openModal();
@@ -13,6 +18,10 @@ export default {
     }
   },
 
+  /**
+   * Setup animations in a getter
+   * @return {Array} Animation properties
+   */
   get _modalAnimations() {
     let modal = this.$.modal,
         overlay = this.$.overlay;
@@ -62,6 +71,10 @@ export default {
 
   },
 
+  /**
+   * Animate the modal open and give it a visible attribute
+   * @return {undefined}
+   */
   _openModal(){
     this._modalAnimations.forEach(({ target, frames, opts }) => {
 
@@ -70,6 +83,11 @@ export default {
     });
   },
 
+
+  /**
+   * Animate the modal close and remove the visible attribute
+   * @return {undefined}
+   */
   _closeModal() {
     this._modalAnimations.forEach(({ target, frames, opts }) => {
 
