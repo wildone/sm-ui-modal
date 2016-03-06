@@ -35,21 +35,29 @@
         });
 
         it('sets active to false on close button click', function() {
+          component.active = true;
           component.$.close.click();
+
           expect(component.active).to.be.false;
         });
 
         it('sets active to false on click outside modal', function() {
+          component.active = true;
           component.$.overlay.click();
+
           expect(component.active).to.be.false;
         });
 
         it('sets active property to true on open()', function() {
+          component.active = false;
+
           component.open();
           expect(component.active).to.be.true;
         });
 
         it('sets active property to false on close()', function() {
+          component.active = true;
+
           component.close();
           expect(component.active).to.be.false;
         });
