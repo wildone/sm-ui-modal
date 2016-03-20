@@ -91,6 +91,12 @@
           expect(component.getAttribute('visible')).to.not.be.null;
         });
 
+        it('should not close when noExit is true', function() {
+          component.active = true;
+          component.noExit = true;
+          component.close();
+          expect(component.active).to.be.true;
+        });
       });
     </script>
   </body>

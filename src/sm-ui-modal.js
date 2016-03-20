@@ -76,7 +76,9 @@ class SmUiModal {
    * @return {undefined}
    */
   close() {
-    this.active = false;
+    if (!this.noExit) {
+      this.active = false;
+    }
   }
 
   /**
@@ -112,10 +114,6 @@ class SmUiModal {
      * @return {undefined}
      */
   _closeOnOverlay() {
-    if (this.noExit) {
-      return;
-    }
-
     this.listen(this.$.overlay, 'tap', 'close');
   }
 
