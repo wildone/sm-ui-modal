@@ -28,7 +28,6 @@
   display: inline-block;
   position: relative;
   background: white;
-  border-radius: var(--border-radius);
   width: var(--modal-width, auto);
   height: var(--modal-height, auto);
   max-width: 95%;
