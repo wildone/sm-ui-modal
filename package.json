@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/simplaio/sm-ui-modal.git"
+    "url": "https://github.com/SimplaElements/sm-ui-modal.git"
   },
   "bugs": {
-    "url": "https://github.com/simplaio/sm-ui-modal/issues"
+    "url": "https://github.com/SimplaElements/sm-ui-modal/issues"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",
