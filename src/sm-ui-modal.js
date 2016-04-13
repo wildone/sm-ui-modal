@@ -28,16 +28,24 @@ class SmUiModal {
         type: Boolean,
         computed: '_computeHasBanner(title)',
         value: false
+      },
+
+      /**
+       * Whether modal is active or not
+       * @type {Boolean}
+       */
+      active: {
+        type: Boolean,
+        notify: true,
+        value: false,
+        observer: '_activeChanged'
       }
     }
   }
 
   get behaviors() {
     return [
-      animation,
-      simpla.behaviors.active({
-        observer: '_activeChanged'
-      })
+      animation
     ];
   }
 

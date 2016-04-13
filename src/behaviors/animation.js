@@ -1,4 +1,4 @@
-const easings = simpla.constants.easings;
+const easings = simpla._constants.easings;
 
 export default {
   observers: [
