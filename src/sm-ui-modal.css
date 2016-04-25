@@ -44,6 +44,7 @@
   color: white;
   font-size: 34px;
   text-align: center;
+  line-height: 1;
 }
 
 .modal__content {
