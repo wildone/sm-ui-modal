@@ -48,7 +48,7 @@
 }
 
 .modal__content {
-  padding: 40px;
+  padding: var(--modal-content-padding, 40px);
 }
 
 .modal__close {
