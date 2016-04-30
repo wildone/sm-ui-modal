@@ -40,9 +40,10 @@
 
 .modal__banner {
   padding: 24px 40px;
-  background: var(--blue);
-  color: white;
+  background: var(--modal-banner-background, --blue);
+  color: var(--modal-banner-color, white);
   font-size: 34px;
+  font-weight: 400;
   text-align: center;
   line-height: 1;
 }
