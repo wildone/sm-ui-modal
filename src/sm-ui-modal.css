@@ -1,12 +1,13 @@
 :host {
   position: fixed;
   display: none;
-  align-items: center;
-  justify-content: center;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  overflow: scroll;
+  padding: 1rem;
+  background: var(--light-black);
   z-index: var(--on-top);
 }
 
@@ -14,13 +15,13 @@
   display: flex;
 }
 
+/* Click-to-escape target */
 .overlay {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: var(--light-black);
 }
 
 .modal {
@@ -30,9 +31,9 @@
   background: white;
   width: var(--modal-width, auto);
   height: var(--modal-height, auto);
-  max-width: 95%;
   min-height: 300px;
   min-width: 350px;
+  margin: auto;
   overflow: hidden;
   box-shadow: 0 1px 1px var(--light-black);
   z-index: 1;
