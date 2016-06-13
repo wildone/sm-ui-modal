@@ -1,6 +1,6 @@
 {
   "name": "sm-ui-modal",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "UI modal component for use throughout Simpla",
   "main": "sm-ui-modal.html",
   "scripts": {
