@@ -1,7 +1,7 @@
 {
   "name": "sm-ui-modal",
   "description": "UI modal component for use throughout Simpla",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "authors": [
     "Simpla <admin@simpla.io>"
   ],
