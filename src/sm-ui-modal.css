@@ -51,6 +51,7 @@
 
 .modal__content {
   padding: var(--modal-content-padding, 40px);
+  overflow: auto;
 }
 
 .modal__close {
