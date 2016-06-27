@@ -29,10 +29,10 @@
   display: inline-block;
   position: relative;
   background: white;
-  width: var(--modal-width, auto);
+  width: 100%;
   height: var(--modal-height, auto);
   min-height: 300px;
-  min-width: 350px;
+  max-width: var(--modal-width, auto);
   margin: auto;
   overflow: hidden;
   box-shadow: 0 1px 1px var(--light-black);
