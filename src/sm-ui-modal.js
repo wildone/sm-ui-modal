@@ -11,24 +11,16 @@ class SmUiModal {
        * Title of the modal
        * @type {String}
        */
-      title: String,
+      title: {
+        type: String,
+        value: ''
+      },
 
       /**
        * Whether the user should be able to exit the modal without clicking confirm
        * @type {[type]}
        */
       noExit: Boolean,
-
-      /**
-       * Whether the modal has a banner
-       * Computed from title
-       * @type {Boolean}
-       */
-      _hasBanner: {
-        type: Boolean,
-        computed: '_computeHasBanner(title)',
-        value: false
-      },
 
       /**
        * Whether modal is active or not
@@ -60,15 +52,6 @@ class SmUiModal {
     } else {
       this.fire('closed');
     }
-  }
-
-  /**
-   * Compute value of the hasBanner property by coercing title property
-   * @param  {String} title Current value of the title property
-   * @return {Boolean}      Coerced boolean of title
-   */
-  _computeHasBanner(title) {
-    return !!title;
   }
 
   /**
