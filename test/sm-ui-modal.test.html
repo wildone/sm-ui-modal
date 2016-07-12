@@ -67,6 +67,7 @@
           sinon.stub(component, '_openModal');
 
           component.active = true;
+          component.flushDebouncer('active-changing');
           expect(component._openModal.called).to.be.true;
         });
 
@@ -75,7 +76,21 @@
           sinon.stub(component, '_closeModal');
 
           component.active = false;
+          component.flushDebouncer('active-changing');
           expect(component._closeModal.called).to.be.true;
+        });
+
+        it('should debouncechanges on active', function() {
+          sinon.stub(component, '_closeModal');
+          sinon.stub(component, '_openModal');
+
+          component.active = false;
+          component.active = true;
+          component.active = false;
+
+          component.flushDebouncer('active-changing');
+          expect(component._closeModal.calledOnce).to.be.true;
+          expect(component._openModal.called).to.be.false;
         });
 
         it('completes _openModal() without errors', function() {

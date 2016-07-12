@@ -11,11 +11,13 @@ export default {
    * @return {undefined}
    */
   _toggleModal(active) {
-    if (active) {
-      this._openModal();
-    } else {
-      this._closeModal();
-    }
+    this.debounce('active-changing', () => {
+      if (active) {
+        this._openModal();
+      } else {
+        this._closeModal();
+      }
+    });
   },
 
   /**
@@ -76,9 +78,8 @@ export default {
    * @return {undefined}
    */
   _openModal(){
+    this.toggleAttribute('visible', true);
     this._modalAnimations.forEach(({ target, frames, opts }) => {
-
-      this.toggleAttribute('visible', true);
       target.animate(frames, opts.open);
     });
   },
